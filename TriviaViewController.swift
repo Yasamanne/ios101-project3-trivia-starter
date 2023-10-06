@@ -100,6 +100,15 @@ class TriviaViewController: UIViewController {
         questionNumber.text = questionNumberText
         relatedImage.image = UIImage(named: currentQuestion.category)
     }
+    @IBAction func restartButtonTapped(_ sender: UIButton) {
+        // Reset game state variables
+        currentQuestionIndex = 0
+        userScore = 0
+        
+        // Display the first question
+        displayQuestion()
+       
+    }
     
     @IBAction func answerButtonTapped(_ sender: UIButton) {
         let currentQuestion = triviaQuestions[currentQuestionIndex]
